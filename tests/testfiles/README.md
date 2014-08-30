@@ -1,8 +1,8 @@
 ## Test files structure
 
 Each test in `input/` directory has its associated referential test which
-follows the pattern `ref/<text_name>_ref.txt` and its associated current
-output file `output/<text_name_out>.txt`.
+follows the pattern `ref/<test_name>_ref.txt` and its associated current
+output file `output/<test_name_out>.txt`.
 
 For the **Board** tests, the output should follow this template:
 ```bash
