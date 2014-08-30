@@ -9,7 +9,7 @@ set( CMAKE_MODULE_PATH
 )
 
 add_subdirectory(src)
-add_subdirectory(includes)
+add_subdirectory(include)
 
 if( BUILD_TESTS )
     include( add_test )

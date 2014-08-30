@@ -2,7 +2,7 @@ set( puzzle-15_SRCS Board.cc Solver.cc TestClient.cc )
 include_directories(
     ${CMAKE_BINARY_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_SOURCE_DIR}/includes
+    ${CMAKE_SOURCE_DIR}/include
 )
 
 add_definitions( -I. -Wall -Wextra -Werror -std=c++0x )
