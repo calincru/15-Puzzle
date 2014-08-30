@@ -32,12 +32,13 @@ root (which is not recommended, btw, but just for the seek of example):
 mkdir 15-puzzle_build
 ```
 
-Enter the newly created build directory and run **cmake**.
+Enter the newly created build directory and run **cmake**. To also create the
+test executables, pass the `-DBUILT_TESTS=true` flag to cmake.
 ```bash
 cd 15-puzzle_build
 cmake ..
 ```
-*Note:* Make sure you have installed at least the 2.8 cmake version.
+**Note:** Make sure you have installed at least the *2.8 cmake version*.
 
 Then just simply run `make` and you should have a complete build of the
 project.
