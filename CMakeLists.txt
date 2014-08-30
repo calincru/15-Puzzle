@@ -1,5 +1,5 @@
 cmake_minimum_required( VERSION 2.8 )
-project( puzzle-8 )
+project( puzzle-15 )
 
 set( CMAKE_COLOR_MAKEFILE ON )
 set( CMAKE_EXPORT_COMPILE_COMMANDS ON )
