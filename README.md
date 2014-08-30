@@ -26,3 +26,18 @@ plus the number of moves made so far to get to the search node.
 
 ## Development
 
+Create a **build** directory, let's say you create it within this repository's
+root (which is not recommended, btw, but just for the seek of example):
+```bash
+mkdir 15-puzzle_build
+```
+
+Enter the newly created build directory and run **cmake**.
+```bash
+cd 15-puzzle_build
+cmake ..
+```
+*Note:* Make sure you have installed at least the 2.8 cmake version.
+
+Then just simply run `make` and you should have a complete build of the
+project.
