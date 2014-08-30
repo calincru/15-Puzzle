@@ -1,4 +1,4 @@
-set( puzzle-8_SRCS Board.cpp Solver.cpp TestClient.cpp )
+set( puzzle-8_SRCS Board.cc Solver.cc TestClient.cc )
 include_directories(
     ${CMAKE_BINARY_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}
