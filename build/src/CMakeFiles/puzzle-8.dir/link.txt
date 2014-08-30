@@ -1,1 +1,0 @@
-/usr/bin/c++       CMakeFiles/puzzle-8.dir/Board.cpp.o CMakeFiles/puzzle-8.dir/Solver.cpp.o CMakeFiles/puzzle-8.dir/TestClient.cpp.o  -o puzzle-8 -rdynamic 
