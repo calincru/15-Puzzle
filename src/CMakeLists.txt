@@ -6,4 +6,4 @@ include_directories(
 )
 
 add_definitions( -I. -Wall -Wextra -Werror -std=c++0x )
-add_executable( puzzle-15 ${puzzle-8_SRCS} )
+add_executable( puzzle-15 ${puzzle-15_SRCS} )
