@@ -42,3 +42,9 @@ cmake ..
 
 Then just simply run `make` and you should have a complete build of the
 project.
+
+## Footnote
+
+Don't message me that this small project is over-structured. That's the
+whole point - to exercise working with the tools which are used in big
+projects.
