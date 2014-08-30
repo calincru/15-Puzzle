@@ -33,7 +33,7 @@ mkdir 15-puzzle_build
 ```
 
 Enter the newly created build directory and run **cmake**. To also create the
-test executables, pass the `-DBUILT_TESTS=true` flag to cmake.
+test executables, pass the `-DBUILD_TESTS=true` flag to cmake.
 ```bash
 cd 15-puzzle_build
 cmake ..
