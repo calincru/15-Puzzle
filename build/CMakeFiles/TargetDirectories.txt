@@ -1,0 +1,2 @@
+/home/calin/Workplace/algs/coursera/8-puzzle/build/tests/CMakeFiles/BoardTest.dir
+/home/calin/Workplace/algs/coursera/8-puzzle/build/src/CMakeFiles/puzzle-8.dir

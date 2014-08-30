@@ -1,0 +1,9 @@
+set( puzzle-8_SRCS Board.cpp Solver.cpp TestClient.cpp )
+include_directories(
+    ${CMAKE_BINARY_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_SOURCE_DIR}/includes
+)
+
+add_definitions( -I. -Wall -Wextra -Werror -std=c++0x )
+add_executable( puzzle-8 ${puzzle-8_SRCS} )

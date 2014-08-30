@@ -1,0 +1,7 @@
+macro( add_test TEST_NAME )
+    if( BUILD_TESTS )
+        set( ${TEST_NAME}_SRCS ${TEST_NAME}.cpp )
+        include_directories( ${CMAKE_CURRENT_BINARY_DIR} )
+        add_executable( ${TEST_NAME} ${${TEST_NAME}_SRCS} )
+    endif( BUILD_TESTS )
+endmacro( add_test TEST_NAME )

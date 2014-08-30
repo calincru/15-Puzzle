@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/calin/Workplace/algs/coursera/8-puzzle/build/src",
+  "command": "/usr/bin/c++    -I/home/calin/Workplace/algs/coursera/8-puzzle/build -I/home/calin/Workplace/algs/coursera/8-puzzle/src -I/home/calin/Workplace/algs/coursera/8-puzzle/includes    -I. -Wall -Wextra -Werror -std=c++0x -o CMakeFiles/puzzle-8.dir/Board.cpp.o -c /home/calin/Workplace/algs/coursera/8-puzzle/src/Board.cpp",
+  "file": "/home/calin/Workplace/algs/coursera/8-puzzle/src/Board.cpp"
+},
+{
+  "directory": "/home/calin/Workplace/algs/coursera/8-puzzle/build/src",
+  "command": "/usr/bin/c++    -I/home/calin/Workplace/algs/coursera/8-puzzle/build -I/home/calin/Workplace/algs/coursera/8-puzzle/src -I/home/calin/Workplace/algs/coursera/8-puzzle/includes    -I. -Wall -Wextra -Werror -std=c++0x -o CMakeFiles/puzzle-8.dir/Solver.cpp.o -c /home/calin/Workplace/algs/coursera/8-puzzle/src/Solver.cpp",
+  "file": "/home/calin/Workplace/algs/coursera/8-puzzle/src/Solver.cpp"
+},
+{
+  "directory": "/home/calin/Workplace/algs/coursera/8-puzzle/build/src",
+  "command": "/usr/bin/c++    -I/home/calin/Workplace/algs/coursera/8-puzzle/build -I/home/calin/Workplace/algs/coursera/8-puzzle/src -I/home/calin/Workplace/algs/coursera/8-puzzle/includes    -I. -Wall -Wextra -Werror -std=c++0x -o CMakeFiles/puzzle-8.dir/TestClient.cpp.o -c /home/calin/Workplace/algs/coursera/8-puzzle/src/TestClient.cpp",
+  "file": "/home/calin/Workplace/algs/coursera/8-puzzle/src/TestClient.cpp"
+},
+{
+  "directory": "/home/calin/Workplace/algs/coursera/8-puzzle/build/tests",
+  "command": "/usr/bin/c++    -I/home/calin/Workplace/algs/coursera/8-puzzle/tests/../includes -I/home/calin/Workplace/algs/coursera/8-puzzle/tests/../src -I/home/calin/Workplace/algs/coursera/8-puzzle/build/tests    -Wall -Wextra -Werror -o CMakeFiles/BoardTest.dir/BoardTest.cpp.o -c /home/calin/Workplace/algs/coursera/8-puzzle/tests/BoardTest.cpp",
+  "file": "/home/calin/Workplace/algs/coursera/8-puzzle/tests/BoardTest.cpp"
+}
+]
