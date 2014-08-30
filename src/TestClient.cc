@@ -14,7 +14,7 @@
 #include <string>
 #include <cassert>
 
-using namespace Puzzle8;
+using namespace Puzzle15;
 
 
 int main(int argc, char **args)

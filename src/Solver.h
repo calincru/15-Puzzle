@@ -12,7 +12,7 @@
 #include "Board.h"
 
 
-namespace Puzzle8
+namespace Puzzle15
 {
 
 class Solver

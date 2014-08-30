@@ -16,7 +16,7 @@
 #include <vector>
 
 
-namespace Puzzle8
+namespace Puzzle15
 {
 
 class Board

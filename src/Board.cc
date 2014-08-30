@@ -14,7 +14,7 @@
 #include <cmath>
 
 
-namespace Puzzle8
+namespace Puzzle15
 {
 
 void swap(Board &first, Board &second) throw()

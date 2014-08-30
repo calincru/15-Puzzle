@@ -17,7 +17,7 @@
 #include <iostream>
 
 
-namespace Puzzle8
+namespace Puzzle15
 {
 
 

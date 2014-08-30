@@ -20,7 +20,7 @@ of this approach hinges on the choice of priority function for a search node.
 We consider two priority functions:
 * **Hamming priority function**. The number of blocks in the wrong position,
 plus the number of moves made so far to get to the search node.
-* **Manhattan Priority function**.  The sum of the Manhattan distances (sum of
+* **Manhattan priority function**.  The sum of the Manhattan distances (sum of
 the vertical and horizontal distance) from the blocks to their goal positions,
 plus the number of moves made so far to get to the search node.
 
