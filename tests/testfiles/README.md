@@ -1,10 +1,11 @@
 **Structure of the test files**
 
-Each test in *input/* directory has its associated referential test which
-follows the pattern *ref/<text_name>_ref.txt* and its associated current
-output file *output/<text_name_out.txt*.
+Each test in **input/** directory has its associated referential test which
+follows the pattern **ref/\<text_name\>_ref.txt** and its associated current
+output file **output/\<text_name_out\>.txt**.
 
 For the **Board** tests, the output should follow this template:
+    ```bash
     3       // Dimension of the Board
     1 1     // Position of the empty slot
     5       // Priority given by the Hamming function
@@ -22,5 +23,6 @@ For the **Board** tests, the output should follow this template:
     8 1 3   // The right neighbour
     4 2 0
     7 6 5
+    ```
 
-*Note:* To avoid any diff problem, leave a newline at the end of file.
+**Note:** To avoid any diff problem, leave a **newline** at the end of file.
