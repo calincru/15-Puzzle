@@ -1,4 +1,4 @@
-## Test files structure
+## TDD Design
 
 
 I designed from scratch a *way* to efficiently write tests in c++, being
@@ -13,9 +13,9 @@ the output files, the list of input files and returns the list of output files.
 
 Now, there are some assumptions made regarding the tests **directory structure**.
 Briefly, the executable should be in the same directory with a **testfiles**
-directory (as in this repo) which contains one directory per each test, which
-contains three directories: *input*, *output*, *ref*. Their meaning is hopefully
-self-explanatory.
+directory (as in this repo) which contains one directory per each test (in this
+case **boardtest** and **solvertest**, which contains three directories:
+*input*, *output*, *ref*. Their meaning is hopefully self-explanatory.
 
 Each test in `input/` directory has its associated referential test which
 follows the pattern `ref/<test_name>_ref.txt` and its associated current
