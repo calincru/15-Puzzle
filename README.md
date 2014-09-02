@@ -40,8 +40,8 @@ cmake ..
 ```
 **Note:** Make sure you have installed at least the *2.8 cmake version*.
 
-Then just simply run `make` and you should have a complete build of the
-project.
+Then just simply run `make` and `make install` and the project should be
+completely built.
 
 ## Footnote
 
