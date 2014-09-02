@@ -46,9 +46,10 @@ For the **Board** tests, the output should follow this template:
 writing additional tests.
 
 ### How to run tests
-You have to build the project with the `-DBUILD_TESTS=1` argument passed to cmake:
+You have to build the project with the `-DBUILD_TESTS=1` argument passed to **cmake**:
 ```bash
 cmake /path/to/source/directory/root -DBUILD_TESTS=1
 ```
+**Note**: You have to run cmake from the **build** directory.
 
 Then simply go to `./tests` and run `./BoardTest` for example.
