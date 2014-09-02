@@ -5,10 +5,10 @@
 // source code.
 //
 
-// Self
+// Project specific
 #include "Board.h"
 
-// Standard Library
+// libc++ and libc
 #include <cassert>
 #include <cstdlib>
 #include <cmath>

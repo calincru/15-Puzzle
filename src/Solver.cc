@@ -5,15 +5,14 @@
 // source code.
 //
 
-// Self
-#include "Solver.h"
 
 // Project Specific
+#include "Solver.h"
 #include "Board.h"
 #include "MinHeap.h"
 #include "Queue.h"
 
-// Standard Library
+// libc++ and libc
 #include <iostream>
 
 

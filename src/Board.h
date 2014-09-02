@@ -11,16 +11,23 @@
 // Project specific
 #include "Queue.h"
 
-// Standard Library
+// libc++ and libc
 #include <string>
 #include <vector>
 
+
+namespace Puzzle15Test
+{
+    class BoardTest;
+}
 
 namespace Puzzle15
 {
 
 class Board
 {
+    friend class Puzzle15Test::BoardTest;
+
 public:
     Board();
     Board(const Board &other);

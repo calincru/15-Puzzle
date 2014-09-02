@@ -17,14 +17,14 @@
 using namespace Puzzle15;
 
 
-int main(int argc, char **args)
+int main(int argc, char **argv)
 {
     if (argc != 2) {
         std::cerr << "The program takes as single argument the input file!\n";
         return 1;
     }
 
-    std::ifstream in(args[1]);
+    std::ifstream in(argv[1]);
     std::vector<int> blocks;
     int N;
 
