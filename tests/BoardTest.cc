@@ -44,10 +44,9 @@ std::vector<std::string> BoardTest::outFiles(
 {
     std::vector<std::string> outFiles;
 
-    for (std::vector<std::string>::const_iterator it = inputFiles.cbegin();
-         it != inputFiles.cend(); ++it) {
+    for (auto &i : inputFiles) {
         // first read the input file and initialize the Board.
-        std::ifstream in(*it);
+        std::ifstream in(i);
         int N;
         std::vector<int> blocks;
 
@@ -62,7 +61,7 @@ std::vector<std::string> BoardTest::outFiles(
 
         // then use the board object to generate the output file.
         const std::string outFile = dirName + std::string("/") +
-                                    it->substr(it->find_last_of("/") + 1) +
+                                    i.substr(i.find_last_of("/") + 1) +
                                     outSuffix;
         outFiles.push_back(outFile);
         std::ofstream out(outFile);

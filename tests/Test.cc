@@ -72,24 +72,25 @@ Test::Test(const std::string &exePath, const std::string &testDirName)
     if (stat(m_outputPath.c_str(), &dirInfo) || !S_ISDIR(dirInfo.st_mode))
         mkdir(m_outputPath.c_str(), 0640);
 
-
     // Generate the lists of input/ref files.
     genFilesList(fullInputPath, m_inputFiles);
     genFilesList(fullRefPath, m_refFiles);
 
     // Check input/ref files consistency
-    for (std::vector<std::string>::const_iterator it = m_refFiles.cbegin();
-         it != m_refFiles.cend(); ++it) {
+    for (auto &i : m_refFiles) {
         // In the ./ref directory should be only _ref.txt files.
-        DIE(!it->find(refSuffix), "An invalid file has been found in ./ref.");
+        DIE(i.rfind(refSuffix) == std::string::npos, "An invalid file has been "
+                                                     "found in ./ref.");
 
         // There should be only one input file which has cutName as its name.
-        std::string cutName = it->substr(0, it->find_last_of(refSuffix));
+        std::string noSuffix = i.substr(0, i.rfind(refSuffix));
+        std::string refFile = noSuffix.substr(noSuffix.find_last_of("/") + 1);
         int count = 0;
-        for (std::vector<std::string>::const_iterator jt = m_refFiles.cbegin();
-             jt != m_refFiles.cend(); ++jt)
-            if (*jt == cutName)
+        for (auto &j : m_inputFiles) {
+            std::string inFile = j.substr(j.find_last_of("/") + 1);
+            if (inFile == refFile)
                 ++count;
+        }
 
         DIE(count != 1, "There should be exactly one file named <file_name> "
                         "in the input directory and one file named "
@@ -110,7 +111,7 @@ Test::~Test()
 
 bool Test::runTest()
 {
-    std::vector<std::string> outputFiles = outFiles(m_outputFiles, m_outputPath);
+    std::vector<std::string> outputFiles = outFiles(m_inputFiles, m_outputPath);
 
     std::vector<std::string>::const_iterator refBeg = m_refFiles.cbegin();
     std::vector<std::string>::const_iterator outBeg = outputFiles.cbegin();
@@ -171,13 +172,13 @@ void Test::genFilesList(const std::string &dirName,
 
     struct dirent *ent = readdir(dir);
     while (ent) {
-        char buf[PATH_MAX+1];
-        realpath(ent->d_name, buf);
-
-        if (std::string(buf) != std::string(".") &&
-            std::string(buf) != std::string(".."))
-            filesList.push_back(std::string(buf));
-
+        if (std::string(ent->d_name) != std::string(".") &&
+            std::string(ent->d_name) != std::string("..")) {
+            std::string path = dirName + "/" + ent->d_name;
+            char buf[PATH_MAX+1];
+            realpath(path.c_str(), buf);
+            filesList.push_back(buf);
+        }
         ent = readdir(dir);
     }
 
