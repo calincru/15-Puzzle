@@ -11,6 +11,7 @@
 #include "Board.h"
 #include "MinHeap.h"
 #include "Queue.h"
+#include "Puzzle15Macros.h"
 
 // libc++ and libc
 #include <iostream>
@@ -19,6 +20,33 @@
 namespace Puzzle15
 {
 
+Solver::Solver(Board *initial)
+{
+    // TODO
+    UNUSED(initial);
+}
 
+Solver::~Solver()
+{
+    // TODO
+}
+
+bool Solver::isSolvable() const
+{
+    // TODO
+    return false;
+}
+
+int Solver::moves() const
+{
+    // TODO
+    return -1;
+}
+
+Queue<Board> Solver::solution()
+{
+    // TODO
+    return Queue<Board>();
+}
 
 }

@@ -7,3 +7,6 @@ include_directories(
 
 add_definitions( -I. -Wall -Wextra -Werror -std=c++0x )
 add_executable( puzzle-15 ${puzzle-15_SRCS} )
+set_target_properties( puzzle-15
+    PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin )

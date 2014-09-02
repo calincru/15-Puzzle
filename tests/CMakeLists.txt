@@ -7,4 +7,8 @@ include_directories(
     ../src
 )
 
-add_test( BoardTest )
+install( DIRECTORY testfiles
+         DESTINATION ${CMAKE_BINARY_DIR}/tests )
+
+set( BoardTest_DEPENDS ../src/Board.cc )
+add_test( BoardTest ${BoardTest_DEPENDS} )
