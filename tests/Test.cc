@@ -91,7 +91,7 @@ Test::Test(const std::string &exePath, const std::string &testDirName)
             if (*jt == cutName)
                 ++count;
 
-        DIE(count != 1, "There should be exactly one file named <file_name>"
+        DIE(count != 1, "There should be exactly one file named <file_name> "
                         "in the input directory and one file named "
                         "<file_name_ref in the ref directory.");
     }
