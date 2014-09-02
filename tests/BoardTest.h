@@ -12,6 +12,7 @@
 #include "Test.h"
 
 // libc++ and libc
+#include <fstream>
 #include <iostream>
 
 
@@ -36,7 +37,11 @@ private:
                             const std::vector<std::string> &inputFiles,
                             const std::string &dirName);
 
+    void printBoardMatrix(const Puzzle15::Board &board, int dim,
+                          std::ofstream &out);
+
     static const std::string dirName;
+    static const std::string outSuffix;
 };
 
 }
