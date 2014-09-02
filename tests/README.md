@@ -52,4 +52,4 @@ cmake /path/to/source/directory/root -DBUILD_TESTS=1
 ```
 **Note**: You have to run cmake from the **build** directory.
 
-Then simply go to `./tests` and run `./BoardTest` for example.
+Then simply go to `/path/to/build/directory/tests` and run `./BoardTest` for example.
