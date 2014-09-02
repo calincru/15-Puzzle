@@ -14,7 +14,7 @@ the output files, the list of input files and returns the list of output files.
 Now, there are some assumptions made regarding the tests **directory structure**.
 Briefly, the executable should be in the same directory with a **testfiles**
 directory (as in this repo) which contains one directory per each test (in this
-case **boardtest** and **solvertest**, which contains three directories:
+case **boardtest** and **solvertest**), which contains three directories:
 *input*, *output*, *ref*. Their meaning is hopefully self-explanatory.
 
 Each test in `input/` directory has its associated referential test which
@@ -42,4 +42,13 @@ For the **Board** tests, the output should follow this template:
 7 6 5
 ```
 
-**Note:** To avoid any diff problem, leave a **newline** at the end of file.
+**Note:** To avoid any diff problem, leave a **newline** at the end of file when
+writing additional tests.
+
+### How to run tests
+You have to build the project with the `-DBUILD_TESTS=1` argument passed to cmake:
+```bash
+cmake /path/to/source/directory/root -DBUILD_TESTS=1
+```
+
+Then simply go to `./tests` and run `./BoardTest` for example.
