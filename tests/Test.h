@@ -36,6 +36,11 @@ private:
                             const std::vector<std::string> &inputFiles,
                             const std::string &dirName) = 0;
 
+    // The genericity of this TDD technique could be taken even further
+    // by adding here a virtual (not pure) method which compares the ref
+    // files with the output ones and has as default implementation the
+    // code wich lays in runTest() after calling outFiles().
+
     static const std::string relativeTestsDir;
     static const std::string inputDir;
     static const std::string outputDir;
