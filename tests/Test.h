@@ -36,10 +36,14 @@ private:
                             const std::vector<std::string> &inputFiles,
                             const std::string &dirName) = 0;
 
-    // The genericity of this TDD technique could be taken even further
-    // by adding here a virtual (not pure) method which compares the ref
-    // files with the output ones and has as default implementation the
-    // code wich lays in runTest() after calling outFiles().
+    /*
+     * This is the default implementation for comparing the output files with
+     * the ref ones. This assumes there are only integers to compare. If some
+     * test requires other types, simply overwrite this method.
+     */
+    virtual bool compare(const std::vector<std::string> &outFiles,
+                         const std::vector<std::string> &refFiles) const;
+
 
     static const std::string relativeTestsDir;
     static const std::string inputDir;
@@ -50,7 +54,6 @@ private:
     std::string m_outputPath;
 
     std::vector<std::string> m_inputFiles;
-    std::vector<std::string> m_outputFiles;
     std::vector<std::string> m_refFiles;
 };
 

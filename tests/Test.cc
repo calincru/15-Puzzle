@@ -111,19 +111,45 @@ Test::~Test()
 
 bool Test::runTest()
 {
-    std::vector<std::string> outputFiles = outFiles(m_inputFiles, m_outputPath);
+    return compare(outFiles(m_inputFiles, m_outputPath), m_refFiles);
+}
 
-    std::vector<std::string>::const_iterator refBeg = m_refFiles.cbegin();
-    std::vector<std::string>::const_iterator outBeg = outputFiles.cbegin();
-    std::vector<std::string>::const_iterator refEnd = m_refFiles.cend();
-    std::vector<std::string>::const_iterator outEnd = outputFiles.cend();
+void Test::genFilesList(const std::string &dirName,
+                        std::vector<std::string> &filesList)
+{
+    DIR *dir = opendir(dirName.c_str());
+    if (!dir)
+        return;
+
+    struct dirent *ent = readdir(dir);
+    while (ent) {
+        if (std::string(ent->d_name) != std::string(".") &&
+            std::string(ent->d_name) != std::string("..")) {
+            std::string path = dirName + "/" + ent->d_name;
+            char buf[PATH_MAX+1];
+            realpath(path.c_str(), buf);
+            filesList.push_back(buf);
+        }
+        ent = readdir(dir);
+    }
+
+    closedir(dir);
+}
+
+bool Test::compare(const std::vector<std::string> &outFiles,
+                   const std::vector<std::string> &refFiles) const
+{
+    std::vector<std::string>::const_iterator refBeg = refFiles.cbegin();
+    std::vector<std::string>::const_iterator outBeg = outFiles.cbegin();
+    std::vector<std::string>::const_iterator refEnd = refFiles.cend();
+    std::vector<std::string>::const_iterator outEnd = outFiles.cend();
 
     bool passedEntirely = true;
     for (; refBeg != refEnd && outBeg != outEnd; ++refBeg, ++outBeg) {
         std::ifstream refIn(*refBeg);
         std::ifstream outIn(*outBeg);
 
-        int testNr = refBeg - m_refFiles.cbegin() + 1;
+        int testNr = refBeg - refFiles.cbegin() + 1;
         bool passed = true;
         while (true) {
             int refVal, outVal;
@@ -163,26 +189,5 @@ bool Test::runTest()
     return passedEntirely;
 }
 
-void Test::genFilesList(const std::string &dirName,
-                        std::vector<std::string> &filesList)
-{
-    DIR *dir = opendir(dirName.c_str());
-    if (!dir)
-        return;
-
-    struct dirent *ent = readdir(dir);
-    while (ent) {
-        if (std::string(ent->d_name) != std::string(".") &&
-            std::string(ent->d_name) != std::string("..")) {
-            std::string path = dirName + "/" + ent->d_name;
-            char buf[PATH_MAX+1];
-            realpath(path.c_str(), buf);
-            filesList.push_back(buf);
-        }
-        ent = readdir(dir);
-    }
-
-    closedir(dir);
-}
 
 }
