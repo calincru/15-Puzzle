@@ -30,13 +30,14 @@ class Board
 
 public:
     Board();
-    Board(const Board &other);
     Board(const std::vector<int> &initBlocks, int dim);
+    Board(const Board &other);
+    Board(Board &&other);
     ~Board();
 
     // Apply copy-and-swap idiom
     Board &operator=(Board other);
-    friend void swap(Board &first, Board &second) throw();
+    friend void swap(Board &first, Board &second) noexcept;
 
     bool operator==(const Board &other) const;
     bool operator!=(const Board &other) const;

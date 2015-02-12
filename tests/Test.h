@@ -59,10 +59,10 @@ private:
 
 }
 
-#define TEST_MAIN(BaseClass, TestObject) \
+#define TEST_MAIN(TestObject) \
         int main(int argc, char *argv[]) \
         { \
-            BaseClass *tester = new TestObject(argc, argv); \
+            auto *tester = new TestObject(argc, argv); \
             std::cout << "Test " << tester->name() << " output:" << std::endl; \
             if (!tester->runTest()) \
                 std::cout << std::endl << "There were tests which did not " \

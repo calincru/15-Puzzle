@@ -51,16 +51,16 @@ std::vector<std::string> BoardTest::outFiles(
         std::vector<int> blocks;
 
         in >> N;
-        for (int i = 0; i < N * N; ++i) {
+        for (auto i = 0; i < N * N; ++i) {
             int val;
             in >> val;
             blocks.push_back(val);
         }
         in.close();
-        Puzzle15::Board *board = new Puzzle15::Board(blocks, N);
+        auto *board = new Puzzle15::Board(blocks, N);
 
         // then use the board object to generate the output file.
-        const std::string outFile = dirName + std::string("/") +
+        const auto outFile = dirName + std::string("/") +
                                     i.substr(i.find_last_of("/") + 1) +
                                     outSuffix;
         outFiles.push_back(outFile);
@@ -102,10 +102,9 @@ std::vector<std::string> BoardTest::outFiles(
 void BoardTest::printBoardMatrix(const Puzzle15::Board &board, int dim,
                                  std::ofstream &out)
 {
-    for (std::vector<int>::const_iterator it = board.m_blocks.cbegin();
-         it != board.m_blocks.cend(); ++it) {
-        int i = (it - board.m_blocks.cbegin())/dim;
-        int j = it - board.m_blocks.cbegin() - i*dim;
+    for (auto it = board.m_blocks.cbegin(); it != board.m_blocks.cend(); ++it) {
+        auto i = (it - board.m_blocks.cbegin())/dim;
+        auto j = it - board.m_blocks.cbegin() - i*dim;
 
         out << *it;
         if (j < dim - 1)
@@ -117,4 +116,4 @@ void BoardTest::printBoardMatrix(const Puzzle15::Board &board, int dim,
 
 }
 
-TEST_MAIN(Puzzle15Test::Test, Puzzle15Test::BoardTest);
+TEST_MAIN(Puzzle15Test::BoardTest);
