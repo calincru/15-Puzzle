@@ -5,7 +5,7 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/include
 )
 
-add_definitions( -I. -Wall -Wextra -Werror -std=c++0x )
+add_definitions( -I. -Wall -Wextra -Werror -std=c++11 )
 add_executable( puzzle-15 ${puzzle-15_SRCS} )
 set_target_properties( puzzle-15
     PROPERTIES
