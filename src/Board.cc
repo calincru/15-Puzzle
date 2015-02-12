@@ -21,6 +21,7 @@ void swap(Board &first, Board &second) noexcept
 {
     using std::swap;
     swap(first.m_blocks, second.m_blocks);
+    swap(first.m_size, second.m_size);
 }
 
 Board::Board()
@@ -37,10 +38,9 @@ Board::Board(const Board &other)
 }
 
 Board::Board(Board &&other)
-    : m_blocks(std::move(other.m_blocks)),
-      m_size(other.m_size)
+    : Board()
 {
-    // nothing to do
+    swap(*this, other);
 }
 
 Board::Board(const std::vector<int> &initBlocks, int dim)
